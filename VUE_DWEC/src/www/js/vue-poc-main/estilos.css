@@ -1,0 +1,16 @@
+nav span{
+	cursor: pointer;
+}
+.activo{
+	display: block;
+
+}
+.inactivo{
+	display: none;
+}
+#vista1{
+	background-color: yellow;
+}
+#vista2{
+	background-color: pink;
+}

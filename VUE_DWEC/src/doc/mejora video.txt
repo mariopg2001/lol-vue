@@ -1,0 +1,1 @@
+cambiar el boton de añadir campeon (puesto en el nav)

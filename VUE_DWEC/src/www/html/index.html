@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+	<meta charset=utf-8 />
+	<link rel="icon" type="image/x-icon" href="../assets/logo3.png">
+	<script src="https://kit.fontawesome.com/f7b55e9c0a.js" crossorigin="anonymous"></script>
+	<link rel=stylesheet href="../assets/jquery-ui-1.13.2.custom/jquery-ui.css" />
+	<link rel=stylesheet href="../assets/jquery-ui-1.13.2.custom/jquery-ui.theme.css" />
+	<meta name=viewport content="width=device-width, initial-scale=1" />
+	<meta name=author content='mjaque@fundacionloyola.es' />
+	<title>MVC</title>
+	<link rel=stylesheet href="../css/index1.css" />
+</head>
+<body>
+	<nav id="nav"></nav>
+	<div id=divadmin>
+		<h1>Admin</h1>
+		<div id="busqueda">
+			<span >Busqueda:</span>
+			<select name="select" id="select">
+				<option id='mago' value="mago">Mago</option>
+				<option id='asesino' value="asesino" >Asesino</option>
+				<option id='tanque' value="tanque">Tanque</option>
+				<option id='Gerrero' value="Gerrero">Guerrero</option>
+				<option  value="Tipo de campeon" hidden disabled selected>TIPO DE CAMPEON</option>
+			</select>
+			<button id="buscar">Buscar</button>
+				
+		</div>
+		<div dir="contenedor" class="contenedor" id="cont1">
+			<!-- <span id="anadir"> <i class="fa-solid fa-plus"></i></span> -->
+				
+		
+		<div id="dialog" title="Publicidad">
+			<p>
+				Mensaje de publicidad
+			</p>
+		</div>
+			<table>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+	<img src="../assets/lol.png" id="draggable">
+	</div>
+	<div id=divanadir>
+		<h1>Añadir</h1>
+		<div class="cuadro1">
+            <div id="anadirform">
+                <label tabindex="5" aria-label="selecciona una imagen">Selecciona una imagen del personaje: </label><br>
+                <input type="file" tabindex="6" name="imagencamp"  id="inputcampeon" accept="image/*"  />
+                <br><br>
+                <label tabindex="7" aria-label="Introduce el nombre">Introduce el Nombre: </label>
+                <input tabindex="8" type="text" name="nombrecamp"  id="nombrecampeon" placeholder="Ezreal"  />
+                <br><br>
+                <label tabindex="9" aria-label="Introduce descripcion">Introduce descripcion del personaje:</label><br>
+                <textarea tabindex="10" title="Jquery uii Descripcion" type="text" name="descripcioncamp"  id="descripcioncampeon" placeholder="Ezreal, que nació y creció en un acaudalado
+                 barrio de Piltover, siempre fue un niño curioso. Sus padres eran arqueólogos de renombre, por lo que él se acostumbró a que se
+                ausentaran largo tiempo de la casa familiar y a fantasear, de tanto en tanto, con viajar con ellos allá donde fueran. Le encantaba
+                que le contaran cuentos de grandes aventuras, y se sentía identificado con el anhelo que estos transmitían de no dejar ni un rincón
+                de mapa por recorrer."  ></textarea><br><br>
+                
+                <label tabindex="11" aria-label="Selecciona la posicion">Seleciona la posición del personaje:</label><br><br>
+                <input aria-label="ADC" tabindex="12"type="checkbox" name="adc" id="posicion1" />ADC &nbsp;&nbsp;&nbsp;
+                <input aria-label="Support" tabindex="13"type="checkbox" name="sup" id="posicion2" />Support<br>
+                <input aria-label="Jungla" tabindex="14"type="checkbox" name="jungla" id="posicion3" />Jungla&nbsp;&nbsp;&nbsp;
+                <input aria-label="Top" tabindex="15"type="checkbox" name="top" id="posicion4" />Top<br>
+                <input aria-label="Mid" tabindex="16"type="checkbox" name="mid" id="posicion5" />Mid<br>
+                
+                <br>
+				<label tabindex="17" aria-label="selecciona el tipo de campeon">Tipo de campeon:</label></br>
+				<input  aria-label="Mago" tabindex="18" type="radio" id="opcion1" class="check" name="tipo" value="Mago" /> 
+				<label >Mago</label> <br/>
+				<input aria-label="Asesino" tabindex="19"type="radio" id="opcion2" class="check" name="tipo" value="Asesino" /> 
+				<label>Asesino</label> <br/>
+				<input aria-label="Tanque"  tabindex="20"type="radio" id="opcion3" class="check" name="tipo" value="Tanque" /> 
+				<label>Tanque</label><br/>
+				<input aria-label="Gerrero" type="radio" tabindex="21" id="opcion4" class="check" name="tipo" value="Guerrero" /> 
+				<label>Guerrero</label><br/>
+                <br>
+                <label>Seleciona el año de creacion:</label>
+                <input tabindex="22" aria-label="Añade la fecha de creacion" type="text" name="fechacreacion" id="fechacreacion"/>
+                <br><br>
+			</div>
+			<br><br>
+			<input type="checkbox" name="acepto" id="acepto" />Acepto sin reserva...<br>
+
+			<button tabindex="23" aria-label="Añadir"id="prueba"> añadir</button>
+			<button tabindex="24" aria-label="Cancelar"id="volver"> Cancelar</button>
+
+			
+        </div>
+
+	</div>
+	
+	<div id=divmod>
+		<h1>Modificar</h1>
+		<div class="cuadro1">
+            <form id="anadirform">
+                <label>Selecciona una imagen del personaje: </label><br>
+                <input type="file" name="imagencamp"  id="inputcampeon2" accept="image/*" required />
+                <br><br>
+                <label>Introduce el Nombre: </label>
+                <input type="text" name="nombrecamp"  id="nombrecampeon2" placeholder="Ezreal" required />
+                <br><br>
+                <label>Introduce descripcion del personaje:</label><br>
+                <textarea type="text" name="descripcioncamp2"  id="descripcioncampeon" placeholder="Ezreal, que nació y creció en un acaudalado
+                 barrio de Piltover, siempre fue un niño curioso. Sus padres eran arqueólogos de renombre, por lo que él se acostumbró a que se
+                ausentaran largo tiempo de la casa familiar y a fantasear, de tanto en tanto, con viajar con ellos allá donde fueran. Le encantaba
+                que le contaran cuentos de grandes aventuras, y se sentía identificado con el anhelo que estos transmitían de no dejar ni un rincón
+                de mapa por recorrer." required ></textarea><br><br>
+                
+                <label>Seleciona la posición del personaje:</label><br><br>
+                <input type="checkbox2" name="adc" id="adc" />ADC &nbsp;&nbsp;&nbsp;
+                <input type="checkbox2" name="sup" id="sup" />Support<br>
+                <input type="checkbox2" name="jungla" id="jungla" />Jungla&nbsp;&nbsp;&nbsp;
+                <input type="checkbox2" name="top" id="top" />Top<br>
+                <input type="checkbox2" name="mid" id="mid" />Mid<br>
+                
+			
+                <label>Seleciona el año de creacion:</label>
+                <!-- <input type="date" name="fechacreacion" id="fechacreacion"/> -->
+            	    <br><br>
+				<input type="checkbox" name="acepto" id="acepto" />Acepto sin reserva...<br>
+
+                <input type="submit" id="btnanadir" value="Guardar" name="guardar"></a> &nbsp;&nbsp;&nbsp; 
+            </form>
+
+        </div>
+	</div>
+	<section class="cookies">
+		<h2 class="cookies__titulo">¿Aceptas nuestras Cookies?</h2> 
+		<p class="cookies__texto">Usamos cookies para mejorar tu experiencia en la web.</p>
+		<div class="cookies__botones">
+			<button class="cookies__boton cookies__boton--no">No</button>
+			<button class="cookies__boton cookies__boton--si">Si</button>
+		</div>
+	</section>
+	
+	<!-- No borrar, aquí se generarán todas las etiquetas <script> si acepta el usuario -->
+	<div display="block"id="nuevosScripts"></div>
+	<script defer>
+        let cookies = () => {
+            //======================================================================
+            // COOKIES
+            //======================================================================
+
+            //-----------------------------------------------------
+            // Configuración
+            //-----------------------------------------------------
+            const urlsScriptsCookies = ['https://analytics.google.com', 'https://facebook.com'];
+
+            function contenidoScriptsCookies () {
+                ////////////  ¿Google Analítics? /////////////
+                ////////////  ¿Facebook Pixel? /////////////
+                ////////////  ¿Admob? /////////////
+                ////////////  etc  /////////////
+            }
+
+
+            //-----------------------------------------------------
+            // Variables
+            //-----------------------------------------------------
+            const seccionCookie = document.querySelector('section.cookies');
+            const cookieSi = document.querySelector('.cookies__boton--si');
+            const cookieNo = document.querySelector('.cookies__boton--no');
+            const nuevosScripts = document.querySelector('#nuevosScripts');
+
+            //-----------------------------------------------------
+            // Funciones
+            //-----------------------------------------------------
+
+            /**
+             * Método que oculta la sección de Cookie para siempre
+             */
+            function ocultarCookie() {
+                // Borra la sección de cookies en el HTML
+                seccionCookie.remove();
+            }
+
+            /**
+             * Método que marca las cookies como aceptadas
+             */
+            function aceptarCookies() {
+                // Oculta el HTML de cookies
+                ocultarCookie();
+                // Guarda que ha aceptado
+                localStorage.setItem('cookie', true);
+                // Tu codigo a ejecutar si aceptan las cookies
+                ejecutarSiAcepta();
+            }
+
+            /**
+             * Método que marca las cookies como denegadas
+             */
+            function denegarCookies() {
+                // Oculta el HTML de cookies
+                ocultarCookie();
+                // Guarda que ha aceptado
+                localStorage.setItem('cookie', false);
+            }
+
+            /**
+             * Método que ejecuta tu código si aceptan las cookies
+             */
+            function ejecutarSiAcepta() {
+                // Crea los <script>
+                urlsScriptsCookies.forEach((url) => {
+                    const nuevoScript = document.createElement('script');
+                    nuevoScript.setAttribute('src', url);
+                    nuevosScripts.appendChild(nuevoScript);
+                });
+                // Lanza los códigos
+                contenidoScriptsCookies();
+            }
+
+            /**
+             * Método que inicia la lógica
+             */
+            function iniciar() {
+                // Comprueba si en el pasado el usuario ha marcado una opción
+                if (localStorage.getItem('cookie') !== null) {
+                    if(localStorage.getItem('cookie') === 'true') {
+                        // Aceptó
+                        aceptarCookies();
+                    } else {
+                        // No aceptó
+                        denegarCookies();
+                    }
+                }
+            }
+
+            //-----------------------------------------------------
+            // Eventos
+            //-----------------------------------------------------
+            cookieSi.addEventListener('click',aceptarCookies, false);
+            cookieNo.addEventListener('click',denegarCookies, false);
+
+            return {
+                iniciar: iniciar
+            }
+        };
+
+        // Activa el código. Comenta si quieres desactivarlo.
+        cookies().iniciar();
+	</script>
+	<!-- <script type=module src="../js/script2.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../assets/jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>
+	<script type=module src="../js/app.js"></script>
+</body>
+</html>
